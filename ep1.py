@@ -1,8 +1,8 @@
 # EP 2019-1: Escape Insper
 #
 # Alunos: 
-# - aluno A: Fulano da Silva, fulanos@insper.edu.br
-# - aluno B: Sicrano de Almeida, sicranoa1@insper.edu.br
+# - aluno A: Diogo Cintra, diogonac@al.insper.edu.br
+# - aluno B: Alexandre Strutz, alexandrebs4@al.insper.edu.br
 
 def carregar_cenarios():
     cenarios = {
@@ -59,8 +59,7 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        # Aluno A: substitua este comentário pelo código para imprimir 
-        # o cenário atual.
+
         print(cenario_atual["titulo"])
         print('-'*len(cenario_atual["titulo"]))
         print(cenario_atual["descricao"])
@@ -71,8 +70,7 @@ def main():
             game_over = True
         else:
 
-            # Aluno B: substitua este comentário e a linha abaixo pelo código
-            # para pedir a escolha do usuário.
+
             print()
             for k,v in cenario_atual['opcoes'].items():
                 print('{0}: {1}'.format(k,v))

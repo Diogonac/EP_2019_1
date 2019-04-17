@@ -73,7 +73,13 @@ def main():
 
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
-            escolha = ""
+            print()
+            for k,v in cenario_atual['opcoes'].items():
+                print('{0}: {1}'.format(k,v))
+            print()
+
+            escolha = input('O que voce quer fazer?')
+
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha

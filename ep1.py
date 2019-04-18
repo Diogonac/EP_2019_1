@@ -7,40 +7,55 @@
 def carregar_cenarios():
     cenarios = {
         "inicio": {
-            "titulo": "Saguao do perigo",
-            "descricao": "Voce esta no saguao de entrada do insper",
+            "titulo": "Saguao de entrada no prédio 1",
+            "descricao": "Voce esta no saguao de entrada do insper ansioso para fazer o vestibular.Neste momento você esta indeciso para onde ir",
             "opcoes": {
-                "andar professor": "Tomar o elevador para o andar do professor",
-                "biblioteca": "Ir para a biblioteca"
+                "elevador": "passar pela catraca e ir ao elevador A",
+                "escada": "passar pela catraca e ir para a escada da casa do pão de queijo",
+                "Saida": "Você vai para fora do prédio respirar um pouco"
             }
         },
-        "andar professor": {
+        "andar da sua sala": {
             "titulo": "Andar do desespero",
-            "descricao": "Voce chegou ao andar da sala do seu professor",
+            "descricao": "Voce chegou ao andar da sala da sua prova",
             "opcoes": {
-                "inicio": "Tomar o elevador para o saguao de entrada",
-                "professor": "Falar com o professor"
+                "inicio": "Desistir do vestibular e ir embora",
+                "sentar": "Achar a carteira com seu nome e sentar"
             }
         },
-        "professor": {
-            "titulo": "O monstro do Python",
-            "descricao": "Voce foi pedir para o professor adiar o EP. "
-                         "O professor revelou que é um monstro disfarçado "
-                         "e devorou sua alma.",
-            "opcoes": {}
-        },
-        "biblioteca": {
-            "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
-            "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
-            }
+        "prova": {
+            "titulo": "Até a morte tem medo",
+            "descricao": "Voce senta em sua carteira e começa a pensar o que esta fazendo ali e reflete sobre a vida",
+            "opcoes": {"vamo que vamo": "decide começar a prova",
+                       "vish vou dar um migue": "vai para o banheiro e fica mexendo no celular"  
+                    }
         }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
-
+def carregar_perguntas():
+    perguntas = {"pergunta1":"Você precisa soltar aquele barroso, mas gosta de extrema privacidade nessas horas. Em qual banheiro você vai?",
+                 "opcoes":{
+                         "segundo andar",
+                         "decimo primeiro andar"
+                         },
+                 "pergunta2": "Acabou aquela aula infinita de GDE e você está morrendo de fome. Qual o horario ideal para ir almoçar?",
+                 "opcoes":{"12:00",
+                           "13:30"
+                         }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            }
 def main():
     print("Na hora do sufoco!")
     print("------------------")

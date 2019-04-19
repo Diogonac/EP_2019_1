@@ -29,8 +29,22 @@ def carregar_cenarios():
             "opcoes": {"vamo que vamo": "decide começar a prova",
                        "vish vou dar um migue": "vai para o banheiro e fica mexendo no celular"  
                     }
-        }
+        },
+        "aula desoft":{
+                "titulo": "Inicio do EP1",
+                "descricao": "Nosso deus vivo Raul começa a nos introduzir sobre o EP1.",
+                },
+        "Cenario1":{
+                "titulo": "Fase 1: Testando suas abilidades de combate",
+                "descricao": "Olá, bem vindo ao meu jogo. Nesta primeira fase vamos introduzir suas possiveis ações."
+                },
+        "Cenario2":{
+                "titulo": "Fase 2: Conhecendo o inimigo",
+                "descricao": "Nesse momento você se depara com um grupo de alunos da GV e outro da ESPM"
+                }
+        
     }
+        
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
@@ -56,10 +70,76 @@ perguntas = {"pergunta1":"Você precisa soltar aquele barroso, mas gosta de extr
                            "não"
                          }
             }
-                 
-                 
-                 
                 
+
+         
+def incremento_jogo():
+    incremento = {"1":"Poder da invisibilidade",
+                  "2":"Empunhar sua espada e lutar",
+                  "3":"Correr para sala das entidades buscar reforços",
+                  "4":"Granada",
+                  
+            }
+    habilidade = "1"
+    return incremento, habilidade
+                 
+def jogo():
+    vida = 100
+    cenarios, nome_cenario_atual = carregar_cenarios()
+    cenario_atual = cenarios["Cenario1"]
+    print(cenario_atual["titulo"])
+    print('-'*len(cenario_atual["titulo"]))
+    print(cenario_atual["descricao"])
+    
+    incremento, habilidade = incremento_jogo()
+    for k,v in incremento.items():
+        print(k,v)
+    print("Sua vida atual é: {0}".format(vida))
+    print()     
+    cenario_atual = cenarios["Cenario2"]
+    print(cenario_atual["titulo"])
+    print('-'*len(cenario_atual["titulo"]))
+    print(cenario_atual["descricao"])
+    
+    acao=input("O que deseja fazer? ")
+    
+
+
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+def primeiro_semestre():
+    
+    
+    cenarios, nome_cenario_atual = carregar_cenarios()
+    
+    print("Neste momento você já comemorou sua aprovação e já começaram as aulas")
+    print("Já começaram as aps, quizz, relatoris de instrumed e até já foram as PI's")
+    print("Mas como nada é facil, os ep's também estão vindo com tudo")
+    print()
+    print("Agora você está na querida aula de de Design de Software")
+    print()
+    cenario_atual = cenarios["aula desoft"]
+    print(cenario_atual["titulo"])
+    print('-'*len(cenario_atual["titulo"]))
+    print(cenario_atual["descricao"])
+    print("Felizmente você já esta manjando de python e como EP1 decide fazer um joguinho simples, simples bem entre aspas")
+    print()
+    print("Já se passaram duas semanas e você finalizou o EP1")
+    print()
+    print("Neste momento chegou a vez do Raul ver esse tal joguinho")
+    print("Usuário saia dai e deixe o Raul jogar!")
+    print('-'*len("Usuário saia dai e deixe o Raul jogar!"))
+    print()
+    jogo()
+
 def resolvendo_prova():
     acertos = 0
     erros = 0
@@ -140,7 +220,7 @@ def resolvendo_prova():
     if acertos>=3:
         print("Parabéns você foi aprovado na primeira fase do vertibular do Insper 2020.1")
         print("Sua potuação foi de: {0}".format(acertos))
-        #segunda_fase()
+        primeiro_semestre()
     else:
         print("Sua pontuação foi inferior a 3. Você foi REPROVADO!!!")
         game_over = True
@@ -261,7 +341,6 @@ def main():
                     
                     if escolha == 'vamo que vamo':
                         resolvendo_prova()
-                        print("chama a função")
                     if escolha == 'vish vou dar um migue':
                         game_over = True
                 

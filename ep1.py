@@ -101,8 +101,53 @@ def jogo():
     print('-'*len(cenario_atual["titulo"]))
     print(cenario_atual["descricao"])
     
-    acao=input("O que deseja fazer? ")
-    
+    acao=input("Digite o numero da ação que deseja realizar: ")
+    if acao == '1':
+        print("Com o poder da invisibilidade você consegue ir no meio dos dois grupos e continua a estuda-los.")
+        acao=input("Digite o numero da ação que deseja realizar: ")
+        if acao == '2':
+            print("Essa não, pessima escolha")
+            game_over = True
+        elif acao == '3':
+            print("Você saiu correndo e sem querer deixou o poder da invisibilidade cair")
+            print("Agora você não pode mais acessar o poder da invidibilidade")
+            acao=input("Digite o numero da ação que deseja realizar: ")
+            
+        elif acao == '4':
+            print("Ao jogar a granada você eliminou os grupos, mas...também perderu sua vida!")
+            print("Você se sacrificou em nome de um bem maior")
+            game_over == True
+        
+    elif acao == '2':
+        print("Você decidiu empunhar sua espada e eliminar os grupos")
+        print("Mas você estava em desvantagem numérica")
+        print("Agora você tem {0}".format(vida-50))
+        print("Você está muito fraco para lutar e correr, só restão as opções: 1 e 4")
+        acao=input("Digite o numero da ação que deseja realizar: ")
+        if acao == "4":
+            print("Uau... você eliminou os grupos porém não conseguiu sobreviver")
+            game_over = True
+        elif acao == '1':
+            print("Você está invisivel, poranto indetectável pelos grupos adversários")
+            print("Você acaba de ganhar o elixir da vida")
+            print("Agora você tem {0}".format(vida+50))
+            print("Com o poder da invisibilidade você consegue descasar e corre para buscar ajuda")
+            
+        
+    elif acao == '3':
+        print("Excelente decisão, você conseguiu mais quatro guerreiros")
+        acao=input("Digite o numero da ação que deseja realizar: ")
+        if acao == '1':
+            print("Agora você e seu grupo estão invisiveis")
+        elif acao == '2':
+            print("Você e seu grupo causaram 350 de dano nos outrou grupos")
+        
+        
+    elif acao == '4':
+        print("Você empunhou a granada e jogou no meio dos dois grupos")
+        print("Conseguiu causar 100 de dados")
+        print("Porém como você esta em desvantagem numerica, os grupos vão em sua direção")
+        acao=input("Digite o numero da ação que deseja realizar: ")
 
 
 

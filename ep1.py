@@ -44,7 +44,7 @@ perguntas = {"pergunta1":"Você precisa soltar aquele barroso, mas gosta de extr
                            "13:30"
                          },
                  "pergunta3": "Chegaram as semanas de provas, você fica na duivida café ou energetico. Como consegir café de graça?",
-                 "opcoes3":{"puxar o saco de alguém do multi insper",
+                 "opcoes3":{"puxar o saco de alguem do multi insper",
                            "marcar reunião com o marcos lisboa e tomar café na sala dele"
                            },
                  "pergunta4": "Você foi no momento insper a algum tempo e se perguntou: Quem é esse cara que fica indo de um lado pro outro?",
@@ -56,6 +56,9 @@ perguntas = {"pergunta1":"Você precisa soltar aquele barroso, mas gosta de extr
                            "não"
                          }
             }
+                 
+                 
+                 
                 
 def resolvendo_prova():
     acertos = 0
@@ -63,7 +66,7 @@ def resolvendo_prova():
     
     print()
     print("Está na hora de começar!")
-    
+    print()
     print("Pergunta 1")
     print(perguntas["pergunta1"])
     print('-'*len(perguntas["pergunta1"]))
@@ -71,19 +74,77 @@ def resolvendo_prova():
     for e in perguntas['opcoes1']:
         print(e)
     print()
-    escolha = input('O que você quer fazer?')
+    escolha = input('Digite sua resposta: ')
     
     if escolha == 'decimo primeiro andar':
         acertos+=1
     else:
         erros=+1
-
-
-        
-
+    print()    
+    print("Pergunta 2")
+    print(perguntas["pergunta2"])
+    print('-'*len(perguntas["pergunta2"]))
+    print()
+    for e in perguntas['opcoes2']:
+        print(e)
+    print()
+    escolha = input('Digite sua resposta: ')
     
+    if escolha == '12:00':
+        acertos+=1
+    else:
+        erros=+1
+    print()
+    print("Pergunta 3")
+    print(perguntas["pergunta3"])
+    print('-'*len(perguntas["pergunta3"]))
+    print()
+    for e in perguntas['opcoes3']:
+        print(e)
+    print()
+    escolha = input('Digite sua resposta: ')
     
-                
+    if escolha == 'puxar o saco de alguem do multi insper':
+        acertos+=1
+    else:
+        erros=+1
+    print()    
+    print("Pergunta 4")
+    print(perguntas["pergunta4"])
+    print('-'*len(perguntas["pergunta4"]))
+    print()
+    for e in perguntas['opcoes4']:
+        print(e)
+    print()
+    escolha = input('Digite sua resposta: ')
+    
+    if escolha == 'presidente do insper':
+        acertos+=1
+    else:
+        erros=+1
+    print()    
+    print("Pergunta 5")
+    print(perguntas["pergunta5"])
+    print('-'*len(perguntas["pergunta5"]))
+    print()
+    for e in perguntas['opcoes5']:
+        print(e)
+    print()
+    escolha = input('Digite sua resposta: ')
+    if escolha == 'sim':
+        acertos+=1
+    else:
+        erros=+1
+    print()  
+    
+    if acertos>=3:
+        print("Parabéns você foi aprovado na primeira fase do vertibular do Insper 2020.1")
+        print("Sua potuação foi de: {0}".format(acertos))
+        #segunda_fase()
+    else:
+        print("Sua pontuação foi inferior a 3. Você foi REPROVADO!!!")
+        game_over = True
+    
 def main():
     print("Na hora do sufoco!")
     print("------------------")
@@ -199,7 +260,7 @@ def main():
                     escolha = input("O que você quer fazer?")
                     
                     if escolha == 'vamo que vamo':
-                        #resolvendo_prova()
+                        resolvendo_prova()
                         print("chama a função")
                     if escolha == 'vish vou dar um migue':
                         game_over = True

@@ -227,18 +227,6 @@ def jogo():
             print("Neste momento os grupos estão atras de você")
             print("Quando você chega a sala  das entidades não encontra ninguém")
             acao=input("Digite o numero da ação que deseja realizar: ")
-
-
-
-                
-                
-                
-                
-                
-                
-                
-                
-                
 def primeiro_semestre():
     
     
@@ -467,34 +455,6 @@ def main():
                         resolvendo_prova()
                     if escolha == 'vish vou dar um migue':
                         game_over = True
-                
-                
-                
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             if escolha in opcoes:

@@ -113,6 +113,7 @@ def inventario():
                  
 def jogo():
     vida = 100
+    incremento2, desicao = incremento2_jogo()
     cenarios, nome_cenario_atual = carregar_cenarios()
     cenario_atual = cenarios["Cenario1"]
     print(cenario_atual["titulo"])
@@ -175,12 +176,16 @@ def jogo():
         if acao == "4":
             print("Uau... você eliminou os grupos porém não conseguiu sobreviver")
             game_over = True
+            
+            
+            
         elif acao == '1':
             print("Você está invisivel, poranto indetectável pelos grupos adversários")
             print("Você acaba de ganhar o elixir da vida")
             print("Agora você tem {0}".format(vida+25))
             print("Suas ações podem ser 2, 3 e 4")
             acao=input("Digite o numero da ação que deseja realizar: ")
+            
             if acao == '2':
                 print("Adimiro sua persistência, mas você não é forte o suficiente")
                 game_over = True
@@ -194,7 +199,6 @@ def jogo():
                 
         
     elif acao == '3':
-        incremento2, desicao = incremento2_jogo()
         print("Excelente decisão, você conseguiu mais quatro guerreiros")
         for f,c in incremento2["jogo2"].items:
             print(f,c)
@@ -215,18 +219,45 @@ def jogo():
         print("Conseguiu causar 100 de dados")
         print("Porém como você esta em desvantagem numerica, os grupos vão em sua direção")
         acao=input("Digite o numero da ação que deseja realizar: ")
+        
         if acao == '1':
             print("Você ativou o poder da invisibilidade!")
             print("Por pouco você não é aniquilado")
             acao=input("Digite o numero da ação que deseja realizar: ")
+            
         elif acao == '2':
             print("Brvo, bravo!!!")
             print("Você lutou como um espartano sedento por sangue")
+            print("Sobraram apenas 2 oponentes")
+            print("Devido a sua extrema coragem, você ganhou 100 de vida")
+            print("Sua vida atual é de: {0}".format(vida+100))
+            for f,c in incremento2["jogo2"].items:
+                print(f,c)
             acao=input("Digite o numero da ação que deseja realizar: ")
+            if acao =='1':
+                print("Parabéns você gahou o jogo")
+            else:
+                print("Nossa, paz com esse pessoal da GV e ESPM? Um completo absurdo")
+                print("Devido sua pessima escolha estou te banindo do meu ilustre jogo")
+                game_over = True
+                
+            
         elif acao == '3':
-            print("Neste momento os grupos estão atras de você")
-            print("Quando você chega a sala  das entidades não encontra ninguém")
+            print("Você conseguiu mais quatro guerreiros")
+            for f,c in incremento2["jogo2"].items:
+                print(f,c)
             acao=input("Digite o numero da ação que deseja realizar: ")
+            if acao == '1':
+                print("Parabéns você gahou o jogo")
+            else:
+                print("Nossa, paz com esse pessoal da GV e ESPM? Um completo absurdo")
+                print("Devido sua pessima escolha estou te banindo do meu ilustre jogo")
+                game_over = True
+                
+                
+            
+            
+            
 def primeiro_semestre():
     
     
@@ -464,8 +495,6 @@ def main():
                 game_over = True
 
     print("Game Over!")
-
-
 # Programa principal.
 if __name__ == "__main__":
     main()

@@ -178,23 +178,36 @@ def jogo():
         elif acao == '1':
             print("Você está invisivel, poranto indetectável pelos grupos adversários")
             print("Você acaba de ganhar o elixir da vida")
-            print("Agora você tem {0}".format(vida+50))
-            print("Com o poder da invisibilidade você consegue descasar e corre para buscar ajuda")
+            print("Agora você tem {0}".format(vida+25))
+            print("Suas ações podem ser 2, 3 e 4")
             acao=input("Digite o numero da ação que deseja realizar: ")
+            if acao == '2':
+                print("Adimiro sua persistência, mas você não é forte o suficiente")
+                game_over = True
+            elif acao == '3':
+                print("Você conseguiu mais quatro guerreiros")
+                
+            elif acao == '4':
+                print("Respeito sua decisão, mas você não é importal!")
+                game_over = True
+                
+                
         
     elif acao == '3':
+        incremento2, desicao = incremento2_jogo()
         print("Excelente decisão, você conseguiu mais quatro guerreiros")
+        for f,c in incremento2["jogo2"].items:
+            print(f,c)
         acao=input("Digite o numero da ação que deseja realizar: ")
         if acao == '1':
-            print("Agora você e seu grupo estão invisiveis")
-            acao=input("Digite o numero da ação que deseja realizar: ")
+            print("Boa guerreiro! Você e seu grupo causaram 100% de dano e eliminaram os inimigos!")
+            
         elif acao == '2':
-            print("Você e seu grupo causaram 350 de dano nos outrou grupos")
-            acao=input("Digite o numero da ação que deseja realizar: ")
-        elif acao == '4':
-            print("Uaaaaal, você conseguiu causar 250 de dano!")
-            print("Sua vida está em 100%")
-            acao=input("Digite o numero da ação que deseja realizar: ")
+            print("Nossa, paz com esse pessoal da GV e ESPM? Um completo absurdo")
+            print("Devido sua pessima escolha estou te banindo do meu ilustre jogo")
+            game_over = True
+            
+
         
         
     elif acao == '4':

@@ -4,6 +4,18 @@
 # - aluno A: Diogo Cintra, diogonac@al.insper.edu.br
 # - aluno B: Alexandre Strutz, alexandrebs4@al.insper.edu.br
 
+from random import randint
+
+
+def sorteia_monstro():
+    level = randint(0,5)
+    if level > 3:
+        print("HAHAHAHAHA")
+        print("Por essa você não esperava")
+        
+        
+    
+    
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -74,14 +86,30 @@ perguntas = {"pergunta1":"Você precisa soltar aquele barroso, mas gosta de extr
 
          
 def incremento_jogo():
-    incremento = {"1":"Poder da invisibilidade",
+    incremento = {"jogo1":{"1":"Poder da invisibilidade",
                   "2":"Empunhar sua espada e lutar",
                   "3":"Correr para sala das entidades buscar reforços",
-                  "4":"Granada",
-                  
+                  "4":"Granada"
             }
+                  }
     habilidade = "1"
     return incremento, habilidade
+
+def incremento2_jogo():
+    incremento2 = {"jogo2":{
+            "1":"Ir guerriar com os grupos",
+            "2":"Declarar paz"}
+            }
+    desicao = "1"
+    return incremento2, desicao
+
+def inventario():
+    mochila={"a":"Espada da morte",
+             "b":"Granada da aniquilação",
+             "c":"Poder da invisibilidade"
+            }
+    item = "Espada da morte"
+    return mochila, item
                  
 def jogo():
     vida = 100
@@ -92,26 +120,46 @@ def jogo():
     print(cenario_atual["descricao"])
     
     incremento, habilidade = incremento_jogo()
-    for k,v in incremento.items():
+    
+    for k,v in incremento["jogo1"].items():
         print(k,v)
+        
     print("Sua vida atual é: {0}".format(vida))
     print()     
     cenario_atual = cenarios["Cenario2"]
     print(cenario_atual["titulo"])
     print('-'*len(cenario_atual["titulo"]))
     print(cenario_atual["descricao"])
+    print("Seu inventario: ")
+    mochila, item = inventario()
+    for j,m in mochila.items():
+        print(j,m)
     
     acao=input("Digite o numero da ação que deseja realizar: ")
     if acao == '1':
         print("Com o poder da invisibilidade você consegue ir no meio dos dois grupos e continua a estuda-los.")
+        print("Não é permitido ativar o item 1")
         acao=input("Digite o numero da ação que deseja realizar: ")
         if acao == '2':
             print("Essa não, pessima escolha")
             game_over = True
         elif acao == '3':
             print("Você saiu correndo e sem querer deixou o poder da invisibilidade cair")
-            print("Agora você não pode mais acessar o poder da invidibilidade")
+            print("Agora você não pode mais acessa-lo")
+            print("Mas ok! Você chegou na sala das entidades")
+            print()
+            print("Você conseguiu mais quatro guerreiros")
+            incremento2, desicao = incremento2_jogo()
+            for f,c in incremento2["jogo2"].items:
+                print(f,c)
             acao=input("Digite o numero da ação que deseja realizar: ")
+            if acao == '1':
+                print("Você e seu grupo causaram 350 de dano nos outrou grupos")
+                
+            elif acao == '2':
+                print("Nossa, paz com esse pessoal da GV e ESPM? Um completo absurdo")
+                print("Devido sua pessima escolha estou te banindo do meu ilustre jogo")
+                game_over = True
             
         elif acao == '4':
             print("Ao jogar a granada você eliminou os grupos, mas...também perderu sua vida!")
@@ -132,15 +180,21 @@ def jogo():
             print("Você acaba de ganhar o elixir da vida")
             print("Agora você tem {0}".format(vida+50))
             print("Com o poder da invisibilidade você consegue descasar e corre para buscar ajuda")
-            
+            acao=input("Digite o numero da ação que deseja realizar: ")
         
     elif acao == '3':
         print("Excelente decisão, você conseguiu mais quatro guerreiros")
         acao=input("Digite o numero da ação que deseja realizar: ")
         if acao == '1':
             print("Agora você e seu grupo estão invisiveis")
+            acao=input("Digite o numero da ação que deseja realizar: ")
         elif acao == '2':
             print("Você e seu grupo causaram 350 de dano nos outrou grupos")
+            acao=input("Digite o numero da ação que deseja realizar: ")
+        elif acao == '4':
+            print("Uaaaaal, você conseguiu causar 250 de dano!")
+            print("Sua vida está em 100%")
+            acao=input("Digite o numero da ação que deseja realizar: ")
         
         
     elif acao == '4':
@@ -148,6 +202,18 @@ def jogo():
         print("Conseguiu causar 100 de dados")
         print("Porém como você esta em desvantagem numerica, os grupos vão em sua direção")
         acao=input("Digite o numero da ação que deseja realizar: ")
+        if acao == '1':
+            print("Você ativou o poder da invisibilidade!")
+            print("Por pouco você não é aniquilado")
+            acao=input("Digite o numero da ação que deseja realizar: ")
+        elif acao == '2':
+            print("Brvo, bravo!!!")
+            print("Você lutou como um espartano sedento por sangue")
+            acao=input("Digite o numero da ação que deseja realizar: ")
+        elif acao == '3':
+            print("Neste momento os grupos estão atras de você")
+            print("Quando você chega a sala  das entidades não encontra ninguém")
+            acao=input("Digite o numero da ação que deseja realizar: ")
 
 
 

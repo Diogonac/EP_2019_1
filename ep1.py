@@ -7,9 +7,7 @@
 from random import randint
 
 tempo = 10
-def sorteia_monstro():
-    level = randint(0,5)
-    return level
+
 
 raul = {"1": "O El Raul é obrigado a fazer o EP1!",
         "2": "Abaixar a guarda e econtrar deus mais cedo",
@@ -222,7 +220,7 @@ def jogo():
             print("Você conseguiu mais quatro guerreiros para ajuda-lo nesta luta")
             
             incremento2, decisao = incremento2_jogo()
-            for f,c in incremento2["jogo2"].items:
+            for f,c in incremento2["jogo2"].items():
                 print(f,c)
             acao=input("Digite o numero da ação que deseja realizar: ")
             
@@ -236,8 +234,8 @@ def jogo():
                     print(n,o)
                 acao=input("Digite o numero da ação que deseja realizar: ")
                 if acao == '1':
-                    sorteia_monstro()
-                    if level<3:
+                    level = randint(0,5)
+                    if level>3:
                         print("Parabéns, você ganhou o jogo")
                     else:
                         print("HAHAHAHAHA")
@@ -286,7 +284,7 @@ def jogo():
                     print(n,o)
                 acao=input("Digite o numero da ação que deseja realizar: ")
                 if acao == '1':
-                    sorteia_monstro()
+                    level = randint(0,5)
                     if level<3:
                         print("Parabéns, você ganhou o jogo")
                     else:
@@ -318,7 +316,7 @@ def jogo():
                 print(n,o)
             acao=input("Digite o numero da ação que deseja realizar: ")
             if acao == '1':
-                sorteia_monstro()
+                level = randint(0,5)
                 if level<3:
                     print("Parabéns, você ganhou o jogo")
                 else:
@@ -348,7 +346,7 @@ def jogo():
             print(n,o)
             acao=input("Digite o numero da ação que deseja realizar: ")
             if acao == '1':
-                sorteia_monstro()
+                level = randint(0,5)
                 if level<3:
                     print("Parabéns, você ganhou o jogo")
                 else:
@@ -536,11 +534,11 @@ def resolvendo_prova():
     else:
         erros+=1
     print()
-    if acertos>5:
+    if acertos>=5:
         print("Parabéns você foi aprovado na primeira fase do vertibular do Insper 2020.1")
         print("Sua potuação foi de: {0}".format(acertos))
         primeiro_semestre()
-    elif acertos ==5:
+    elif acertos<5:
         print("Sua nota não foi das melhoras, porem a faculdade acredita no seu potencial, você tem uma ultima chance para entrar no Insper.")
         print("Suas opções são:")
         print("Instituto de pesquisa")

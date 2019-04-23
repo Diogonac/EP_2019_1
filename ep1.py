@@ -27,13 +27,15 @@ def luta_raul():
         print("Desistir foi uma péssima escolha!")
         game_over = True
     
-        
+repescagem = {"1":"Instituto de pesquisa",
+              "2":"Inspirar e Pertencer",
+        }     
     
 def carregar_cenarios():
     cenarios = {
         "inicio": {
-            "titulo": "Saguao de entrada no prédio 1",
-            "descricao": "Voce esta no saguao de entrada do insper ansioso para fazer o vestibular.Neste momento você esta indeciso para onde ir",
+            "titulo": "Saguão de entrada no prédio 1",
+            "descricao": "Você está no saguão de entrada do insper ansioso para fazer o vestibular. Neste momento você esta indeciso para onde ir",
             "opcoes": {
                 "elevador": "passar pela catraca e ir ao elevador A",
                 "escada": "passar pela catraca e ir para a escada da casa do pão de queijo",
@@ -141,7 +143,7 @@ perguntas = {"pergunta1":"Você precisa soltar aquele barro, mas gosta de extrem
  
          
 def incremento_jogo():
-    incremento = {"jogo1":{"1":"Poder da invisibilidade",
+    incremento = {"jogo1":{"1":"Ativar o poder da invisibilidade",
                   "2":"Empunhar sua espada e lutar",
                   "3":"Correr para sala das entidades buscar reforços",
                   "4":"Granada"
@@ -240,7 +242,10 @@ def jogo():
                     else:
                         print("HAHAHAHAHA")
                         print("Por essa você não esperava... Vai ter que lutar com o chefão, o grande El Raul")
+                        print()
                         luta_raul()
+                        print("Parabéns você venceu o jogo!")
+                        
                 else:
                     print("Não foi desta vez!")
                     game_over = True
@@ -365,23 +370,23 @@ def primeiro_semestre():
     
     cenarios, nome_cenario_atual = carregar_cenarios()
     
-    print("Neste momento você já comemorou sua aprovação e já começaram as aulas")
-    print("Já começaram as aps, quizz, relatoris de instrumed e até já foram as PI's")
-    print("Mas como nada é facil, os ep's também estão vindo com tudo")
+    print("Neste momento você já comemorou sua aprovação e já começaram as aulas.")
+    print("Já começaram as aps, quizz, relatorios de instrumed e até já foram as PI's.")
+    print("Mas como nada é fácil, os ep's também estão vindo com tudo.")
     print()
-    print("Agora você está na querida aula de de Design de Software")
+    print("Agora você está na querida aula de de Design de Software.")
     print()
     cenario_atual = cenarios["aula desoft"]
     print(cenario_atual["titulo"])
     print('-'*len(cenario_atual["titulo"]))
     print(cenario_atual["descricao"])
-    print("Felizmente você já esta manjando de python e como EP1 decide fazer um joguinho simples, simples bem entre aspas")
+    print("Felizmente você já esta manjando de python e como EP1 decide fazer um joguinho simples, simples bem entre aspas.")
     print()
-    print("Já se passaram duas semanas e você finalizou o EP1")
+    print("Já se passaram duas semanas e você finalizou o EP1.")
     print()
-    print("Neste momento chegou a vez do Raul ver esse tal joguinho")
+    print("Neste momento chegou a vez do Raul ver esse tal joguinho.")
     print("Usuário saia dai e deixe o Raul jogar!")
-    print('-'*len("Usuário saia dai e deixe o Raul jogar!"))
+    print('-'*86)
     print()
     jogo()
 
@@ -491,7 +496,7 @@ def resolvendo_prova():
     
     
     print()    
-    print("Pergunta8")
+    print("Pergunta 8")
     print(perguntas["pergunta8"])
     print('-'*len(perguntas["pergunta8"]))
     print()
@@ -534,47 +539,53 @@ def resolvendo_prova():
     else:
         erros+=1
     print()
-    if acertos>=5:
+    print("Sua pontuação foi: {0}".format(acertos))
+    if acertos>=7:
         print("Parabéns você foi aprovado na primeira fase do vertibular do Insper 2020.1")
         print("Sua potuação foi de: {0}".format(acertos))
         primeiro_semestre()
-    elif acertos<5:
+    elif acertos<7:
         print("Sua nota não foi das melhoras, porem a faculdade acredita no seu potencial, você tem uma ultima chance para entrar no Insper.")
-        print("Suas opções são:")
-        print("Instituto de pesquisa")
-        print("Inspirar e Pertencer")
-        Y=input("O que significa INSPER?")
+        print("O que significa INSPER?")
+        print()
+        for m,l in repescagem.items():
+            print(m,l)
+
+        resposta = input("Digite o número correspondente a sua resposta: ")
                 
-        if Y == 'Inspirar e Pertencer':
+        if resposta == '2':
             print("Você passou de fase como esperavamos, agora você vai para a sala do Marcos Lisboa ter uma conversa para ele definir seu potencial")
             conversa_com_Marquinhos()
         else:
-            print("Sua pontuação foi inferior a 5. Você foi REPROVADO, vai pra GV!!!")    
+            print("Você foi REPROVADO, vai pra GV!!!")    
             game_over = True
             
                    
         
 def conversa_com_Marquinhos():
-    
+    print()
     print("Você tem uma oportunidade de ouro, conversar com um dos economistas mais famosos do pais")
-    Z = input("Ele tem uma pergunta para você, quer uma resposta de sim ou não sobre o salario minimo, você acha que ele deve levar em conta o ajuste real todo ano?")
-    if Z == 'sim':
+    final = input("Ele tem uma pergunta para você, quer uma resposta de sim ou não sobre o salario minimo, você acha que ele deve levar em conta o ajuste real todo ano? ")
+    if final == 'sim':
         print("Você ganhou o direito de ingressar na faculdade em 2020.1")
+        print('-'*86)
+        print()
         primeiro_semestre()
     else:
         print("Você não merece ser raposa, você esta eliminado do processo seletivo, tente proximo semestre")
         game_over = True
         
 def main():
-    print("Na hora do sufoco!")
-    print("------------------")
+    print("PRESTE MUITA ATENÇÃO!!!")        
+    print("Para entrar no clima deste jogo, você precisa já ter assistido algum episódio de Black Mirror.")
+    print("Para você que nunca assistiu, esta série envolve conseitos do surrealismo, ou seja, não tem muito sentido lógico os acontecimentos.")
     print()
-    print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
-        "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...")
+    print("Você está prestes a começar o jogo.")
+    print("Lembrando que a ocultação de informação faz parte do clima do jogo.")
     print()
-    print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
-        "na entrada do Insper, e quer procurar o professor para pedir um "
-        "adiamento do EP (boa sorte...)")
+    print("Boa Sorte")
+    print('-'*len(("Você está prestes a começar o jogo"
+          "Lembrando que a ocultação de informação faz parte do")))
     print()
 
     cenarios, nome_cenario_atual = carregar_cenarios()
@@ -603,7 +614,7 @@ def main():
                 print('{0}: {1}'.format(k,v))
             print()
 
-            escolha = input('O que você quer fazer?')
+            escolha = input('O que você quer fazer? ')
 #Opção saida
             if escolha == 'saida':
                 print("Escolha errada meu caro, tenha mais coragem!")
@@ -626,7 +637,7 @@ def main():
                     print('{0}: {1}'.format(a,b))
                     print()
             
-                escolha = input("O que você quer fazer?")
+                escolha = input("O que você quer fazer? ")
                 if escolha == 'fugir':
                     game_over = True
                     print("Seja mais forte da próxima vez")
@@ -640,7 +651,7 @@ def main():
                     for c,d in cenario_atual['opcoes'].items():
                         print('{0}: {1}'.format(c,d))
                         print()  
-                    escolha = input("O que você quer fazer?")
+                    escolha = input("O que você quer fazer? ")
                     
                     if escolha == 'vamo que vamo':
                         resolvendo_prova()
@@ -653,6 +664,7 @@ def main():
             if escolha == 'escada':
                 print("Neste momento você está subindo a escada")
                 print("Aguarde...")
+                print()
                 while tempo<1e7:
                     tempo+=1
                 cenario_atual = cenarios["andar da sua sala"]
@@ -665,12 +677,13 @@ def main():
                     print('{0}: {1}'.format(a,b))
                     print()
             
-                escolha = input("O que você quer fazer?")
+                escolha = input("O que você quer fazer? ")
                 if escolha == 'fugir':
                     game_over = True
                     print("Seja mais forte da próxima vez")
                     
-                if escolha == 'sentar':          
+                if escolha == 'sentar':  
+                    print()
                     cenario_atual = cenarios["prova"]
                     print(cenario_atual["titulo"])
                     print('-'*len(cenario_atual["titulo"]))
@@ -679,7 +692,7 @@ def main():
                     for c,d in cenario_atual['opcoes'].items():
                         print('{0}: {1}'.format(c,d))
                         print()  
-                    escolha = input("O que você quer fazer?")
+                    escolha = input("O que você quer fazer? ")
                     
                     if escolha == 'vamo que vamo':
                         resolvendo_prova()
@@ -690,10 +703,14 @@ def main():
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             else:
-                print("Sua indecisão foi sua ruína!")
                 game_over = True
+    if game_over==True:
+        print('-'*86)
+        print("HAHAHAHAHA")
+        print("Não desista, tente novamente!")
+        game_over = True
+        
 
-    print("Game Over!")
 # Programa principal.
 if __name__ == "__main__":
     main()

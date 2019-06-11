@@ -1,13 +1,11 @@
-# EP 2019-1: Escape Insper
-#
-# Alunos: 
-# - aluno A: Diogo Cintra, diogonac@al.insper.edu.br
-# - aluno B: Alexandre Strutz, alexandrebs4@al.insper.edu.br
+#Escape Insper
+# Autores: 
+# Diogo Cintra, diogonac@al.insper.edu.br
+# Alexandre Strutz, alexandrebs4@al.insper.edu.br
 
 from random import randint
 
 tempo = 10
-
 
 raul = {"1": "O El Raul é obrigado a fazer o EP1!",
         "2": "Abaixar a guarda e econtrar deus mais cedo",
@@ -88,7 +86,6 @@ def carregar_cenarios():
         
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
- 
     
 perguntas = {"pergunta1":"Você precisa soltar aquele barro, mas gosta de extrema privacidade nessas horas. Em qual banheiro você vai?",
                  "opcoes1":{
@@ -140,8 +137,7 @@ perguntas = {"pergunta1":"Você precisa soltar aquele barro, mas gosta de extrem
                          },
                             
             }
- 
-         
+       
 def incremento_jogo():
     incremento = {"jogo1":{"1":"Ativar o poder da invisibilidade",
                   "2":"Empunhar sua espada e lutar",
@@ -168,7 +164,6 @@ def inventario():
     item = "a"
     return mochila, item
     
-
 def teleporte_ultima_sala():
     entrar_insper = {"1":"PE é uma modalidade de investimento em que um fundo levanta capital para adquirir participação em empresas já desenvolvidas e obter lucro a médio ou longo prazo com a venda",
                      "2": "PE são transações nas quais a propriedade de empresas, outras organizações empresariais ou suas unidades operacionais são transferidas ou consolidadas com outras entidades",
@@ -303,8 +298,6 @@ def jogo():
                 print("Respeito sua decisão, mas você não é imortal!")
                 game_over = True
                 
-                
-        
     elif acao == '3':
         incremento2, decisao = incremento2_jogo()
         print("Excelente decisão, você conseguiu mais quatro guerreiros")
@@ -337,9 +330,6 @@ def jogo():
             print("Devido sua pessima escolha estou te banindo do meu ilustre jogo pra sempre, você nao merece estar aqui")
             game_over = True
             
-
-        
-        
     elif acao == '4':
         print("Você empunhou a granada e jogou no meio dos dois grupos")
         print("Conseguiu causar 100% de dano e assim elimina os grupos")
@@ -362,12 +352,8 @@ def jogo():
                 print("Não foi desta vez!")
                 game_over = True
 
-
-
-
 def primeiro_semestre():
-    
-    
+        
     cenarios, nome_cenario_atual = carregar_cenarios()
     
     print("Neste momento você já comemorou sua aprovação e já começaram as aulas.")
@@ -478,7 +464,6 @@ def resolvendo_prova():
         acertos += 1
     else:
         erros+=1
-
     
     print()    
     print("Pergunta 7")
@@ -493,8 +478,7 @@ def resolvendo_prova():
         acertos+=1
     else:
         erros+=1
-    
-    
+       
     print()    
     print("Pergunta 8")
     print(perguntas["pergunta8"])
@@ -508,8 +492,7 @@ def resolvendo_prova():
         acertos +=1
     else:
         erros+=1
-    
-    
+       
     print()    
     print("Pergunta 9")
     print(perguntas["pergunta9"])
@@ -523,7 +506,6 @@ def resolvendo_prova():
         acertos+=1
     else:
         erros +=1
-    
     
     print()    
     print("Pergunta 10")
@@ -560,8 +542,6 @@ def resolvendo_prova():
             print("Você foi REPROVADO, vai pra GV!!!")    
             game_over = True
             
-                   
-        
 def conversa_com_Marquinhos():
     print()
     print("Você tem uma oportunidade de ouro, conversar com um dos economistas mais famosos do pais")
@@ -591,13 +571,11 @@ def main():
     cenarios, nome_cenario_atual = carregar_cenarios()
 
     game_over = False
-    
 
     tempo = 0
     
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-
 
         print(cenario_atual["titulo"])
         print('-'*len(cenario_atual["titulo"]))
@@ -615,11 +593,11 @@ def main():
             print()
 
             escolha = input('O que você quer fazer? ')
-#Opção saida
+
             if escolha == 'saida':
                 print("Escolha errada meu caro, tenha mais coragem!")
                 game_over = True
-#Opção elevador                
+
             if escolha == 'elevador':
                 print("Aguarde o elevador chegar")
                 while tempo<1e8:
@@ -660,7 +638,6 @@ def main():
                     if escolha == 'vish vou dar um migue':
                         game_over = True
                         
-#Opção escada
             if escolha == 'escada':
                 print("Neste momento você está subindo a escada")
                 print("Aguarde...")
@@ -699,7 +676,6 @@ def main():
                     if escolha == 'vish vou dar um migue':
                         game_over = True
 
-
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             else:
@@ -710,7 +686,5 @@ def main():
         print("Não desista, tente novamente!")
         game_over = True
         
-
-# Programa principal.
 if __name__ == "__main__":
     main()
